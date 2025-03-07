@@ -2,7 +2,7 @@
 	"name": "dsazuresqldb",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "lsAzureSqlDatabase1",
+			"referenceName": "AzureSqlDatabase2",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
