@@ -5,6 +5,9 @@
 			"referenceName": "ls_OnPremSQLServer",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "migration_ds_folder"
+		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": []
