@@ -1,0 +1,16 @@
+{
+	"name": "ls_OnPremSQLServer",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=MSI;initial catalog=WideWorldImporters;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5NmZlMGI4YS03Y2E1LTRlNzgtOTdlZC03Yzg5ZWE0MzkzZjMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfhostedintegrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
