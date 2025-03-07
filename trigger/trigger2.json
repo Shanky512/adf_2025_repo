@@ -1,0 +1,28 @@
+{
+	"name": "trigger2",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "ssmstoazuresql_pipeline_adventure",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"paramTableSchema": "  ",
+					"paramTableName": " "
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 15,
+				"startTime": "2025-03-08T02:14:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}
