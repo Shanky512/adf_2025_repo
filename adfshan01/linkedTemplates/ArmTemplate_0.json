@@ -45,11 +45,11 @@
 		},
 		"trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableSchema": {
 			"type": "string",
-			"defaultValue": " "
+			"defaultValue": "  "
 		},
 		"trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableName": {
 			"type": "string",
-			"defaultValue": " "
+			"defaultValue": "  "
 		}
 	},
 	"variables": {
@@ -718,7 +718,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 15,
-						"startTime": "2025-03-08T11:07:00",
+						"startTime": "2025-03-08T11:17:00",
 						"endTime": "2025-03-09T05:22:00",
 						"timeZone": "India Standard Time"
 					}
