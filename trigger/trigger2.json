@@ -3,18 +3,7 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "ssmstoazuresql_pipeline_adventure",
-					"type": "PipelineReference"
-				},
-				"parameters": {
-					"paramTableSchema": "  ",
-					"paramTableName": " "
-				}
-			}
-		],
+		"pipelines": [],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
