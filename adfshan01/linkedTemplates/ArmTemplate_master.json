@@ -1,0 +1,119 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfshan01"
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase2'"
+		},
+		"lsAzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'lsAzureSqlDatabase1'"
+		},
+		"lsAzureSqlDatabaseadventure_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'lsAzureSqlDatabaseadventure'"
+		},
+		"lsSqlServer2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'lsSqlServer2'"
+		},
+		"ls_OnPremSQLServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_OnPremSQLServer'"
+		},
+		"ls_onpremserver2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_onpremserver2'"
+		},
+		"ls_onpremsqlserver_adventure_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_onpremsqlserver_adventure'"
+		},
+		"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableSchema": {
+			"type": "string",
+			"defaultValue": "  "
+		},
+		"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableName": {
+			"type": "string",
+			"defaultValue": "  "
+		},
+		"trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableSchema": {
+			"type": "string",
+			"defaultValue": " "
+		},
+		"trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableName": {
+			"type": "string",
+			"defaultValue": " "
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfshan01_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase2_connectionString": {
+						"value": "[parameters('AzureSqlDatabase2_connectionString')]"
+					},
+					"lsAzureSqlDatabase1_connectionString": {
+						"value": "[parameters('lsAzureSqlDatabase1_connectionString')]"
+					},
+					"lsAzureSqlDatabaseadventure_connectionString": {
+						"value": "[parameters('lsAzureSqlDatabaseadventure_connectionString')]"
+					},
+					"lsSqlServer2_connectionString": {
+						"value": "[parameters('lsSqlServer2_connectionString')]"
+					},
+					"ls_OnPremSQLServer_connectionString": {
+						"value": "[parameters('ls_OnPremSQLServer_connectionString')]"
+					},
+					"ls_onpremserver2_connectionString": {
+						"value": "[parameters('ls_onpremserver2_connectionString')]"
+					},
+					"ls_onpremsqlserver_adventure_connectionString": {
+						"value": "[parameters('ls_onpremsqlserver_adventure_connectionString')]"
+					},
+					"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableSchema": {
+						"value": "[parameters('trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableSchema')]"
+					},
+					"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableName": {
+						"value": "[parameters('trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableName')]"
+					},
+					"trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableSchema": {
+						"value": "[parameters('trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableSchema')]"
+					},
+					"trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableName": {
+						"value": "[parameters('trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

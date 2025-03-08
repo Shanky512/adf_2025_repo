@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfshan01"
+		},
+		"AzureSqlDatabase2_connectionString": {
+			"value": ""
+		},
+		"lsAzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"lsAzureSqlDatabaseadventure_connectionString": {
+			"value": ""
+		},
+		"lsSqlServer2_connectionString": {
+			"value": ""
+		},
+		"ls_OnPremSQLServer_connectionString": {
+			"value": ""
+		},
+		"ls_onpremserver2_connectionString": {
+			"value": ""
+		},
+		"ls_onpremsqlserver_adventure_connectionString": {
+			"value": ""
+		},
+		"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableSchema": {
+			"value": "  "
+		},
+		"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableName": {
+			"value": "  "
+		},
+		"trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableSchema": {
+			"value": " "
+		},
+		"trigger3_properties_ssmstoazuresql_pipeline_adventure_parameters_paramTableName": {
+			"value": " "
+		}
+	}
+}
