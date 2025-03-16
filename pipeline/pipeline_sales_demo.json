@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline_sales_demo",
 	"properties": {
 		"activities": [
 			{
@@ -63,8 +63,6 @@
 			{
 				"name": "Notebook1",
 				"type": "DatabricksNotebook",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy data1",
@@ -82,7 +80,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/bronze_notebook"
+					"notebookPath": "/Shared/bronze_layer_notebook",
+					"baseParameters": {
+						"pipelineid": "@pipeline().RunId"
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "ls_AzureDatabricks",
