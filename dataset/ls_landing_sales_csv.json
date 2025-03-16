@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileSystem": "landing"
+				"folderPath": "landing",
+				"fileSystem": "dev"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
