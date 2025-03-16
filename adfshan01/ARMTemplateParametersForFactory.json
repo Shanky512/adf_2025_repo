@@ -17,7 +17,13 @@
 		"lsSqlServer2_connectionString": {
 			"value": ""
 		},
+		"ls_AzureDatabricks_accessToken": {
+			"value": ""
+		},
 		"ls_OnPremSQLServer_connectionString": {
+			"value": ""
+		},
+		"ls_adls01_accountKey": {
 			"value": ""
 		},
 		"ls_onpremserver2_connectionString": {
@@ -25,6 +31,12 @@
 		},
 		"ls_onpremsqlserver_adventure_connectionString": {
 			"value": ""
+		},
+		"ls_AzureDatabricks_properties_typeProperties_existingClusterId": {
+			"value": "0312-182734-u5um882k"
+		},
+		"ls_adls01_properties_typeProperties_url": {
+			"value": "https://sa1storageaccountadls.dfs.core.windows.net"
 		},
 		"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableSchema": {
 			"value": "  "

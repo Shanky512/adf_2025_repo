@@ -23,9 +23,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'lsSqlServer2'"
 		},
+		"ls_AzureDatabricks_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'ls_AzureDatabricks'"
+		},
 		"ls_OnPremSQLServer_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_OnPremSQLServer'"
+		},
+		"ls_adls01_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls01'"
 		},
 		"ls_onpremserver2_connectionString": {
 			"type": "secureString",
@@ -34,6 +42,14 @@
 		"ls_onpremsqlserver_adventure_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_onpremsqlserver_adventure'"
+		},
+		"ls_AzureDatabricks_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0312-182734-u5um882k"
+		},
+		"ls_adls01_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sa1storageaccountadls.dfs.core.windows.net"
 		},
 		"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableSchema": {
 			"type": "string",
@@ -90,6 +106,12 @@
 					"lsSqlServer2_connectionString": {
 						"value": "[parameters('lsSqlServer2_connectionString')]"
 					},
+					"ls_AzureDatabricks_accessToken": {
+						"value": "[parameters('ls_AzureDatabricks_accessToken')]"
+					},
+					"ls_adls01_accountKey": {
+						"value": "[parameters('ls_adls01_accountKey')]"
+					},
 					"ls_OnPremSQLServer_connectionString": {
 						"value": "[parameters('ls_OnPremSQLServer_connectionString')]"
 					},
@@ -98,6 +120,30 @@
 					},
 					"ls_onpremsqlserver_adventure_connectionString": {
 						"value": "[parameters('ls_onpremsqlserver_adventure_connectionString')]"
+					},
+					"ls_AzureDatabricks_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('ls_AzureDatabricks_properties_typeProperties_existingClusterId')]"
+					},
+					"ls_adls01_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls01_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adfshan01_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableSchema": {
 						"value": "[parameters('trigger1_properties_ssmstoazuresql_pipeline_parameters_paramTableSchema')]"
@@ -113,7 +159,9 @@
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfshan01_ArmTemplate_0')]"
+			]
 		}
 	]
 }
